@@ -1,8 +1,10 @@
 # TikTok_mates
-![manim logo](https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/1c641bcc-e75e-47ee-ae84-d24be75695d6)
+![manim logo](https://manimce.xeted.com/pluginfile.php/26/course/overviewfiles/cropped.png)
 I'll be using Manim to make TikTok videos in Spanish, and will leave the source python code here for anyone who wants to see what you can do with manim. <br>
 Here you can see a little preview of what can be done in manim:
 
 
-https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/1d71c974-9a60-450c-9509-8d5ecfb37a00
+
+
+https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/535a4510-86b5-46e3-9bbc-8bd0ef3710dc
 
