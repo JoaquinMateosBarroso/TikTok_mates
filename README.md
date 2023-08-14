@@ -6,5 +6,7 @@ Here you can see a little preview of what can be done in manim:
 
 
 
-https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/535a4510-86b5-46e3-9bbc-8bd0ef3710dc
+
+
+https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/156ecefa-107f-42e5-9192-b5a656c311ef
 
