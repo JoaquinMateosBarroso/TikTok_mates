@@ -14,7 +14,7 @@ extraTemplate = TexTemplate()
 extraTemplate.add_to_preamble(r"\usepackage{mathrsfs}")
 
 
-class HelloWorld(Scene):
+class Que_son_las_matematicas(Scene):
     def setup(self, add_border=False):
         if add_border:
             self.border = Rectangle(
