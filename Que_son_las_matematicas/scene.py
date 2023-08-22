@@ -32,7 +32,7 @@ class Que_son_las_matematicas(Scene):
             FadeIn(title),
             Write(basel, shift=DOWN),
         )
-        self.wait(1)
+        self.wait(6.5)
         
 
         formulas = []
@@ -60,14 +60,14 @@ class Que_son_las_matematicas(Scene):
         self.play(
             FadeIn(*formulas[7:], shift=DOWN)
         )
-        self.wait(1)
+        self.wait(6)
         
         infinity = MathTex(r"\infty", font_size=150)
         self.play(
             FadeTransform(formulas[0], infinity),
             FadeOut(*formulas[1:]),
         )
-        self.wait(1)
+        self.wait(3)
         
         
         infinity2 = MathTex(r"\infty", font_size=80)
@@ -79,7 +79,7 @@ class Que_son_las_matematicas(Scene):
             FadeTransform(infinity, infinity2),
             FadeIn(cardinals),
         )
-        self.wait(4)
+        self.wait(4.5)
         
         
         nDots = 9
@@ -104,14 +104,42 @@ class Que_son_las_matematicas(Scene):
                 dot.animate.shift(UP * 3 + RIGHT * lineSize *((nDots//2+1)/(nDots+1) - (i+1)/(2*(nDots+1)) - 1/4)),
                       run_time=0.1
                       )
-        self.wait(2)
+        self.wait(4)
         
         
+class Que_son_las_matematicas2(Scene):
+    def setup(self, add_border=False):
+        if add_border:
+            self.border = Rectangle(
+                width=FRAME_WIDTH,
+                height=FRAME_HEIGHT,
+                color=WHITE,
+            )
+            self.add(self.border)
+            
+    def construct(self):
         text = [Tex(r"m\'athema,"), Tex(r"``conocimiento'' en griego")]
         VGroup(*text).arrange(DOWN)
         self.play(
-            FadeOut(*dGroup, d1, d2),
-            FadeTransform(l1, text[0]),
-            FadeIn(text[1]),
+            FadeIn(*text),
         )
-        self.wait(2)
+        self.wait(13)
+        
+        
+        text2 = [Tex(r"Las matemáticas son"), Tex(r"el juego más grande jamás creado")]
+        VGroup(*text2).arrange(DOWN)
+        self.play(
+            FadeTransform(text[0], text2[0]),
+            FadeTransform(text[1], text2[1]),
+        )
+        self.wait(3)
+        
+        
+        text3 = [Tex(r"Un juego en el que las reglas"), Tex(r"las pone Dios")]
+        VGroup(*text3).arrange(DOWN)
+        self.play(
+            FadeTransform(text2[0], text3[0]),
+            FadeTransform(text2[1], text3[1]),
+        )
+        self.wait(4)
+
