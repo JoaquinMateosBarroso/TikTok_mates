@@ -1,13 +1,15 @@
 from manim import *
 
-SCALE_FACTOR = 0.6
-# flip with to height, height to with
-config.pixel_height, config.pixel_width = config.pixel_width, config.pixel_height 
-# Change coord system dimensions
-config.frame_height = config.frame_height / SCALE_FACTOR
-config.frame_width = config.frame_height * 10/16
-FRAME_HEIGHT = config.frame_height
-FRAME_WIDTH = config.pixel_width
+phone_format = False
+if phone_format:
+    SCALE_FACTOR = 0.6
+    # flip with to height, height to with
+    config.pixel_height, config.pixel_width = config.pixel_width, config.pixel_height 
+    # Change coord system dimensions
+    config.frame_height = config.frame_height / SCALE_FACTOR
+    config.frame_width = config.frame_height * 10/16
+    FRAME_HEIGHT = config.frame_height
+    FRAME_WIDTH = config.pixel_width
 
 # A template to use the bbm package
 extraTemplate = TexTemplate()
