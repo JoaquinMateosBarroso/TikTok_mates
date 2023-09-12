@@ -1,6 +1,6 @@
 from manim import *
 
-phone_format = True
+phone_format = False
 if phone_format:
     SCALE_FACTOR = 0.6
     # flip with to height, height to with
@@ -16,7 +16,7 @@ extraTemplate = TexTemplate()
 extraTemplate.add_to_preamble(r"\usepackage{mathrsfs}")
 
 
-class Como_se_crean_matematicas(Scene):
+class Como_se_crean_matematicas1(Scene):
     def setup(self, add_border=False):
         if add_border:
             self.border = Rectangle(
@@ -77,11 +77,11 @@ class Como_se_crean_matematicas(Scene):
             FadeIn(*texts1),
         )
         
-        self.wait(9)
+        self.wait(13.5)
         
         
-        dots2 = [Dot(2*(LEFT+DOWN)), Dot(2*(RIGHT+UP))]
-        union = Line((LEFT+DOWN)*8, (RIGHT+UP)*8)
+        dots2 = [Dot(2*(2*LEFT+DOWN)), Dot(2*(2*RIGHT+UP))]
+        union = Line((2*LEFT+DOWN)*8, (2*RIGHT+UP)*8)
         self.play(
             *[FadeTransform(t, d) for t, d in zip(texts1, dots2)],
             FadeOut(texts1[-1]),
@@ -126,3 +126,107 @@ class Como_se_crean_matematicas(Scene):
         
         self.play(FadeIn(texts5[1]))
         self.wait(4)
+        
+        
+        
+class Como_se_crean_matematicas2(Scene):
+    def setup(self, add_border=False):
+        if add_border:
+            self.border = Rectangle(
+                width=FRAME_WIDTH,
+                height=FRAME_HEIGHT,
+                color=WHITE,
+            )
+            self.add(self.border)
+            
+    def construct(self):
+        texts1 = [MathTex(r"p\rightarrow q"), MathTex(r"q\vee \neg \;p")]
+        VGroup(*texts1).arrange(DOWN)
+        self.play(
+            FadeIn(texts1[0]),
+        )
+        self.wait(7.5)
+        self.play(
+            FadeIn(texts1[1]),
+        )
+        
+        
+        texts2 = [
+            Tex(r"Teorema:"),
+            Tex(r"Tú eres mortal"),
+            MathTex(r"\text{EsMortal(Tú)}")]
+        VGroup(*texts2).arrange(DOWN)
+        
+        
+        self.wait(12)
+        
+        
+        self.play(
+            *[FadeTransform(t1, t2) for t1, t2 in zip(texts1, texts2)],
+            FadeIn(texts2[2]),
+        )
+        self.wait(3)
+
+        
+        texts3 = [
+            Tex(r"Axiomas:\\"),
+            Tex(r"EsPersona(Tú)"),
+            MathTex(r"\forall x \;\; \text{EsPersona(x)} \rightarrow \text{EsMortal(x)}")
+        ]
+        VGroup(*texts3).arrange(DOWN)
+        
+        self.play(
+            FadeOut(*texts2),
+            FadeIn(texts3[0]),   
+        )
+        
+        self.wait(2.5)
+        self.play(FadeIn(texts3[1]))
+        
+        self.wait(4)
+        self.play(FadeIn(texts3[2]))
+        self.wait(2)
+        
+        texts3_1 = [Tex(r"Conclusiones:\\").next_to(texts3[0], DOWN*0), texts3[1].copy(),
+                    MathTex(r" \text{EsPersona(Tú)} \rightarrow \text{EsMortal(Tú)}").next_to(texts3[2], DOWN*0)]
+        self.play(
+            FadeTransform(texts3[0], texts3_1[0]),
+        )
+        self.wait(2)
+        self.play(
+            FadeTransform(texts3[2], texts3_1[2]))
+        self.wait(4)
+        
+        texts3_2 = [texts3_1[0].copy(), texts3_1[1].copy(),
+                    MathTex(r"\text{EsMortal(Tú)} \vee \neg \text{EsPersona(Tú)}").next_to(texts3_1[2], DOWN*0)]
+        
+        
+        self.play(
+            FadeTransform(texts3_1[2], texts3_2[2]))
+        
+        self.wait(22)
+        
+        texts3_3 = [texts3_2[0].copy(),
+                    MathTex(r"\text{EsMortal(Tú)}").next_to(texts3_2[2], DOWN*0)]
+        self.play(
+            FadeOut(texts3[1]),
+            FadeTransform(texts3_2[2], texts3_3[1]))
+        self.wait(8)
+        
+        
+        self.play(
+            FadeOut(texts3_1[0], texts3_3[1]),)
+        self.wait(8)
+        
+        
+        texts4 = [Tex(r"Es casi imposible que sean nuestros juicios", font_size=30),
+                  Tex(r"tan puros y tan sólidos como lo fuera si,", font_size=30),
+                  Tex(r"desde el momento de nacer, tuviéramos el", font_size=30),
+                  Tex(r"uso pleno de nuestra razón y no hubiéramos", font_size=30),
+                  Tex(r"sido nunca dirigidos más que por ésta", font_size=30)
+                ]
+        VGroup(*texts4).arrange(DOWN)
+        
+        self.play(FadeIn(*texts4))
+        
+        self.wait(40)
