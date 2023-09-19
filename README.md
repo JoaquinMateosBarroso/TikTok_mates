@@ -8,5 +8,6 @@ Here you can see a little preview of what can be done in manim:
 
 
 
-https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/156ecefa-107f-42e5-9192-b5a656c311ef
+https://github.com/JoaquinMateosBarroso/TikTok_mates/assets/108573823/05103698-1e9a-406d-9543-c4a3f2b7f817
+
 
